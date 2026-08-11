@@ -1,15 +1,44 @@
 ﻿# Rosemary Care Notebook
 
-产品向个人档案 / 护理记录站点。
+CSM3401 Multimedia Web Interaction · Firebase Hosting
 
 **Live:** https://rosemary-care-notebook.web.app  
 **Portfolio:** https://hawk327ml.github.io/
 
-## Status
+ROSEMARY CROP PROFILE WEBSITE - POLISHED PROGRESS VERSION
 
-线上已部署（Firebase Hosting）。本仓库用于版本管理与后续迭代。
+Group: Cool People Club
+Course: CSM3401 Multimedia Web Interaction
 
-## Links
+Live website:
+https://rosemary-crop-profile-227233.web.app
 
-- Portfolio: https://hawk327ml.github.io/
-- GitHub: https://github.com/Hawk327ml/Build-rosemary-profile-site
+IMPORTANT
+This is a polished progress version, not the final product. The current
+hand-drawn illustration panels are integrated as supporting visuals while all
+main website content remains editable HTML. Final references and image credits
+can still be added by the group before final submission.
+
+PROJECT STRUCTURE
+- public/index.html   Website content
+- public/style.css    Responsive design
+- public/script.js    Menu, checklist, FAQ, watering tool, and navigation interactions
+- public/assets/illustrations/  Hand-drawn section illustration panels
+- public/images/      Website icon and earlier SVG illustration asset
+- firebase.json       Firebase Hosting configuration
+- .firebaserc         Firebase project and Hosting target
+
+QUICK PREVIEW
+Open public/index.html in a web browser.
+
+Or use Firebase local preview:
+firebase serve --only hosting
+
+FIREBASE DEPLOYMENT
+Run these commands from this project folder:
+
+firebase login
+firebase deploy --only hosting:rosemary --project daisy-c2db8
+
+The existing live site will then be updated.
+

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "daisy-c2db8"
+  },
+  "targets": {
+    "daisy-c2db8": {
+      "hosting": {
+        "rosemary": [
+          "rosemary-care-notebook"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

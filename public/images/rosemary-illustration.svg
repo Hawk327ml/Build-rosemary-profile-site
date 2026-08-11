@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 470" role="img" aria-labelledby="title desc">
+  <title id="title">Rosemary plant in a balcony pot</title>
+  <desc id="desc">A clean green illustration of rosemary growing in a terracotta pot beside a balcony railing.</desc>
+  <rect width="520" height="470" rx="34" fill="#fbfcf8"/>
+  <circle cx="415" cy="83" r="49" fill="#f0d889" opacity=".9"/>
+  <path d="M30 371h460M52 371v72M468 371v72M112 371v72M408 371v72" fill="none" stroke="#d6dfd3" stroke-width="8"/>
+  <path d="M258 340C258 266 246 175 250 83M246 280c-35-43-48-83-54-132M256 259c35-36 54-78 59-125M250 206c-17-34-22-65-18-97M258 319c39-32 69-72 79-112M247 323c-40-26-69-62-84-102" fill="none" stroke="#2e6549" stroke-linecap="round" stroke-width="8"/>
+  <g fill="none" stroke="#62906b" stroke-linecap="round" stroke-width="11">
+    <path d="M248 109l-22-19M249 126l24-22M247 145l-31-18M251 164l29-22M247 183l-32-17M253 202l30-21M248 222l-34-15M254 241l32-22M250 262l-36-17M256 282l34-23M251 302l-33-17M258 321l31-22"/>
+    <path d="M231 115l-14-18M234 139l-18-10M223 166l-20-12M217 190l-20-10M205 216l-22-8M198 242l-21-7M276 150l18-19M286 172l19-14M297 195l20-12M308 220l22-8M318 243l22-5M328 267l20-3"/>
+    <path d="M185 170l-18-15M191 190l-22-9M199 211l-24-5M174 236l-23-4M185 255l-23 2M301 227l18-16M315 244l22-10M324 265l24-4M333 286l23 2"/>
+  </g>
+  <path d="M174 327h168l-9 40H183z" fill="#d28c6c"/>
+  <path d="M190 361h136l-17 83H207z" fill="#bd7657"/>
+  <path d="M219 374h15l5 55h-11z" fill="#d99373"/>
+</svg>

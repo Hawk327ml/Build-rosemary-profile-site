@@ -1,6 +1,5 @@
-// Firebase Web App configuration from the existing project.
-// TODO: Enable Email/Password in Firebase Authentication if sign up says it is not enabled.
-// TODO: Enable Cloud Firestore and create the database if checklist saving shows a Firestore API error.
+// Public Firebase web config (access control is Auth + firestore.rules).
+// Setup: Email/Password auth + Firestore must be enabled in project daisy-c2db8.
 const firebaseConfig = {
   apiKey: "AIzaSyD70bRekX84bNfbsVmapDNCm9RqOFNUQvo",
   authDomain: "daisy-c2db8.firebaseapp.com",
@@ -137,13 +136,16 @@ function setupStickyNavigation() {
   sections.forEach((section) => observer.observe(section));
 }
 
-// Hero slider: simple fade transition with buttons and dots.
+// Hero slider: fade transition with controls, optional autoplay, reduced-motion safe.
 function setupHeroSlider() {
+  const slider = document.querySelector(".hero-slider");
   const slides = [...document.querySelectorAll(".hero-slide")];
   const dots = [...document.querySelectorAll(".slider-dot")];
   const prevButton = document.querySelector("#prev-slide");
   const nextButton = document.querySelector("#next-slide");
   let currentSlide = 0;
+  let autoplayId = null;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (!slides.length || !dots.length) return;
 
@@ -161,9 +163,41 @@ function setupHeroSlider() {
     });
   };
 
-  prevButton?.addEventListener("click", () => showSlide(currentSlide - 1));
-  nextButton?.addEventListener("click", () => showSlide(currentSlide + 1));
-  dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+  const stopAutoplay = () => {
+    if (autoplayId) {
+      window.clearInterval(autoplayId);
+      autoplayId = null;
+    }
+  };
+
+  const startAutoplay = () => {
+    if (reduceMotion || slides.length < 2) return;
+    stopAutoplay();
+    autoplayId = window.setInterval(() => showSlide(currentSlide + 1), 5500);
+  };
+
+  const onManualChange = (index) => {
+    showSlide(index);
+    startAutoplay();
+  };
+
+  prevButton?.addEventListener("click", () => onManualChange(currentSlide - 1));
+  nextButton?.addEventListener("click", () => onManualChange(currentSlide + 1));
+  dots.forEach((dot, index) => dot.addEventListener("click", () => onManualChange(index)));
+
+  slider?.addEventListener("pointerenter", stopAutoplay);
+  slider?.addEventListener("pointerleave", startAutoplay);
+  slider?.addEventListener("focusin", stopAutoplay);
+  slider?.addEventListener("focusout", (event) => {
+    if (!slider.contains(event.relatedTarget)) startAutoplay();
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopAutoplay();
+    else startAutoplay();
+  });
+
+  startAutoplay();
 }
 
 // Calming audio: use only the real MP3 file, never autoplay, and hide the button if it cannot load.

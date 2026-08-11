@@ -1,44 +1,36 @@
 ﻿# Rosemary Care Notebook
 
-CSM3401 Multimedia Web Interaction · Firebase Hosting
+CSM3401 Multimedia Web Interaction · Firebase Hosting product profile site.
 
 **Live:** https://rosemary-care-notebook.web.app  
 **Portfolio:** https://hawk327ml.github.io/
 
-ROSEMARY CROP PROFILE WEBSITE - POLISHED PROGRESS VERSION
+## Preview
 
-Group: Cool People Club
-Course: CSM3401 Multimedia Web Interaction
+Open `public/index.html` in a browser, or:
 
-Live website:
-https://rosemary-crop-profile-227233.web.app
-
-IMPORTANT
-This is a polished progress version, not the final product. The current
-hand-drawn illustration panels are integrated as supporting visuals while all
-main website content remains editable HTML. Final references and image credits
-can still be added by the group before final submission.
-
-PROJECT STRUCTURE
-- public/index.html   Website content
-- public/style.css    Responsive design
-- public/script.js    Menu, checklist, FAQ, watering tool, and navigation interactions
-- public/assets/illustrations/  Hand-drawn section illustration panels
-- public/images/      Website icon and earlier SVG illustration asset
-- firebase.json       Firebase Hosting configuration
-- .firebaserc         Firebase project and Hosting target
-
-QUICK PREVIEW
-Open public/index.html in a web browser.
-
-Or use Firebase local preview:
+```bash
 firebase serve --only hosting
+```
 
-FIREBASE DEPLOYMENT
-Run these commands from this project folder:
+## Deploy
 
+```bash
 firebase login
 firebase deploy --only hosting:rosemary --project daisy-c2db8
+```
 
-The existing live site will then be updated.
+## Structure
 
+```text
+public/index.html      # page content
+public/style.css       # responsive layout
+public/script.js       # menu, checklist, FAQ, watering tool
+public/assets/         # illustrations + audio
+firebase.json          # hosting + firestore rules wiring
+.firebaserc            # project / hosting target (rosemary-care-notebook)
+```
+
+## Notes
+
+Group: Cool People Club. Hand-drawn illustration panels support the HTML content. Older alternate hosting URL in history: `rosemary-crop-profile-227233.web.app`.

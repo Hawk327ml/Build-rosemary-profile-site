@@ -24,8 +24,19 @@ firebase serve --only hosting
 
 ## Deploy
 
-```bash
-firebase login
+Node/Firebase CLI does **not** use Windows system proxy by itself. If you use v2rayN (mixed `10808`), wrap commands:
+
+```powershell
+.\scripts\with-proxy.ps1 firebase login --reauth
+.\scripts\with-proxy.ps1 firebase deploy --only hosting:rosemary --project daisy-c2db8
+```
+
+Or set in the same PowerShell session:
+
+```powershell
+$env:HTTP_PROXY=$env:HTTPS_PROXY="http://127.0.0.1:10808"
+$env:NODE_USE_ENV_PROXY="1"
+$env:METADATA_SERVER_DETECTION="none"
 firebase deploy --only hosting:rosemary --project daisy-c2db8
 ```
 

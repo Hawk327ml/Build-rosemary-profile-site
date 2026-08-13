@@ -19,5 +19,10 @@ if ($args.Count -eq 0) {
 }
 
 Write-Host "Using proxy $Proxy"
-& $args[0] @($args | Select-Object -Skip 1)
+# Use --% stop-parsing when callers pass firebase flags like --only (PowerShell would otherwise bind them).
+if ($args.Count -ge 1 -and $args[0] -eq '--%') {
+  & $args[1] @($args | Select-Object -Skip 2)
+} else {
+  & $args[0] @($args | Select-Object -Skip 1)
+}
 exit $LASTEXITCODE
